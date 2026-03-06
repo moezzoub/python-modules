@@ -1,6 +1,6 @@
 # ex0/Card.py
 from abc import ABC, abstractmethod
-from typing import Any
+
 
 class Card(ABC):
     def __init__(self, name: str, cost: int, rarity: str) -> None:
@@ -14,7 +14,7 @@ class Card(ABC):
         raise NotImplementedError
 
     def get_card_info(self) -> dict:
-        # type default: from class name (CreatureCard -> Creature)
+        """Return a dictionary containing the card's information."""
         card_type = self.__class__.__name__.replace("Card", "")
         return {
             "name": self.name,
@@ -24,4 +24,5 @@ class Card(ABC):
         }
 
     def is_playable(self, available_mana: int) -> bool:
+        """Check if the card can be played with the given available mana."""
         return available_mana >= self.cost
