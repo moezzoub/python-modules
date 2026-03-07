@@ -15,7 +15,7 @@ class CreatureCard(Card):
         self.health = health
 
     def play(self, game_state: dict) -> dict:
-        # keep it simple (subject says no complex logic)
+        """Summon the creature to the battlefield."""
         return {
             "card_played": self.name,
             "mana_used": self.cost,
