@@ -3,6 +3,7 @@ from ex3.GameStrategy import GameStrategy
 
 class AggressiveStrategy(GameStrategy):
     def execute_turn(self, hand: list, battlefield: list) -> dict:
+        """Execute a turn using the aggressive strategy."""
         mana_budget = 5
         damage = 0
         targets = self.prioritize_targets(battlefield)
@@ -22,6 +23,7 @@ class AggressiveStrategy(GameStrategy):
         }
 
     def get_strategy_name(self) -> str:
+        """Return the name of the strategy."""
         return "AggressiveStrategy"
 
     def prioritize_targets(self, available_targets: list) -> list:

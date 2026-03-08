@@ -15,6 +15,7 @@ class EliteCard(Card, Combatable, Magical):
         self.spell_power = spell_power
 
     def play(self, game_state: dict) -> dict:
+        """Simulate playing the card, returning a summary of the action."""
         return {
             'card_played': self.name,
             'mana_used': self.cost,
@@ -22,6 +23,7 @@ class EliteCard(Card, Combatable, Magical):
         }
 
     def attack(self, target) -> dict:
+        """Simulate an attack on a target, returning combat details."""
         return {
             'attacker': self.name,
             'target': target.name,
@@ -30,6 +32,8 @@ class EliteCard(Card, Combatable, Magical):
         }
 
     def cast_spell(self, spell_name: str, targets: list) -> dict:
+        """Simulate casting a spell, consuming mana
+                and applying effects to targets."""
         mana_used = 4
         if self.mana < mana_used:
             mana_used = self.mana
@@ -42,6 +46,8 @@ class EliteCard(Card, Combatable, Magical):
         }
 
     def defend(self, incoming_damage: int) -> dict:
+        """Simulate defending against an attack,
+                    calculating damage taken and blocked."""
         damage_blocked = min(self.block_power, incoming_damage)
         damage_taken = incoming_damage - damage_blocked
         self.health -= damage_taken
@@ -53,6 +59,7 @@ class EliteCard(Card, Combatable, Magical):
         }
 
     def get_combat_stats(self) -> dict:
+        """Return the card's combat-related stats."""
         return {
             'attack_power': self.attack_power,
             'block_power': self.block_power,
@@ -60,6 +67,7 @@ class EliteCard(Card, Combatable, Magical):
         }
 
     def channel_mana(self, amount: int) -> dict:
+        """Channel additional mana into the card, increasing its mana pool."""
         self.mana += amount
         return {
             'channeled': amount,
@@ -67,6 +75,7 @@ class EliteCard(Card, Combatable, Magical):
         }
 
     def get_magic_stats(self) -> dict:
+        """Return the card's magical attributes."""
         return {
             'mana': self.mana,
             'spell_power': self.spell_power

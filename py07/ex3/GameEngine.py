@@ -5,6 +5,8 @@ from ex3.GameStrategy import GameStrategy
 class GameEngine:
     def configure_engine(self, factory: CardFactory,
                          strategy: GameStrategy) -> None:
+        """Configure the game engine with a card factory
+                and a game strategy."""
         self.factory = factory
         self.strategy = strategy
         self.hand = []
@@ -14,6 +16,8 @@ class GameEngine:
         self.cards_created = 0
 
     def simulate_turn(self) -> dict:
+        """Simulate a turn using the configured
+                strategy and return the results."""
         if self.strategy is None or self.factory is None:
             raise ValueError("Engine not configured")
         self.turns_simulated += 1
@@ -25,6 +29,8 @@ class GameEngine:
         }
 
     def get_engine_status(self) -> dict:
+        """Return the current status of the game engine,
+                including stats and configuration."""
         if self.strategy is None:
             strategy_name = None
         else:

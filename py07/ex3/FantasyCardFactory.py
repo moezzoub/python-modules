@@ -6,6 +6,7 @@ from ex0.CreatureCard import CreatureCard
 
 
 class FantasyCardFactory(CardFactory):
+    """Concrete factory for creating fantasy-themed cards."""
     def create_creature(self, name_or_power: str | int | None = None) -> Card:
         if isinstance(name_or_power, int):
             return CreatureCard('Warrior', 3, 'Common', name_or_power, 5)
@@ -39,6 +40,7 @@ class FantasyCardFactory(CardFactory):
         return ArtifactCard('Ancient book', 1, 'Common', 4, 'heal')
 
     def create_themed_deck(self, size: int) -> dict:
+        """Create a themed deck of cards based on predefined types."""
         types = ['dragon', 'goblin', 'lightning', 'fireball', 'ice',
                  'mana_ring']
         deck = {}
@@ -58,6 +60,7 @@ class FantasyCardFactory(CardFactory):
         return deck
 
     def get_supported_types(self) -> dict:
+        """Return a dictionary of supported card types and examples."""
         return {
             'creatures': ['dragon', 'goblin'],
             'spells': ['fireball'],
