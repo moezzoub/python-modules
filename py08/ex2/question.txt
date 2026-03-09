@@ -1,0 +1,56 @@
+
+ex0:
+What is a virtual environment and why is it important?
+: 
+• What problems do virtual environments solve?:
+
+• How does their program detect the virtual environment?
+:
+
+"""achno ajwiba dyl had les questions 
+ly 3tytini : 3lach virtual environments مهمin chno الفرق
+ bin pip w Poetry kifach environment variables 
+kay7afdo 3la security w configurability """
+
+
+
+ex1:
+• The difference between pip and Poetry ?
+:
+    -pip = install packages b style simple
+    -Poetry = organize dependencies w project 
+        config b tariqa mratba aktar.
+
+• Why dependency management is important ?
+:
+    Dependency management mohim 7it kaymn3 moshakil bin packages, 
+    w kaykhal project mratab w sahl tsaybo.
+
+• How their program handles missing dependencies?
+:
+    look loading.py.
+
+
+
+ex2:
+• Why environment variables are important for security ?
+:
+    Environment variables kay7mio secrets 7it ma kan7ettouch 
+    API keys w passwords direct f code, w hadchi 
+    kayna9es risk dyal leak.
+
+• The difference between development and production configuration?
+: 
+    Development configuration katkon 3adatan ltest 
+    w local setup, amma production configuration 
+    katkon l environment real
+
+• How python-dotenv helps with configuration management?
+: 
+    python-dotenv kay9ra .env file w kay7ett values 
+    f environment, donc kaywlli tmanagement 
+    dyal config sahal, n9i, w mratab.
+
+• How their program handles missing configuration?
+:
+    look oracle.py

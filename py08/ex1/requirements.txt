@@ -1,0 +1,4 @@
+pandas     "data manipulation and analysis"
+numpy      "calculations and numerical operations"
+matplotlib "data visualization"
+requests   "HTTP requests"
